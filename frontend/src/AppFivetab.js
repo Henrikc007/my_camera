@@ -1,8 +1,8 @@
 // SidebarLayout.js
 import React, { useState } from "react";
-
+import AboutHenrik from "../pages/aboutpage";
 const tabs = [
-  { id: "home", label: "Home" },
+  { id: "hjem", label: "Hjem" },
   { id: "profile", label: "Profile" },
   { id: "messages", label: "Messages" },
   { id: "settings", label: "Settings" },
@@ -40,7 +40,7 @@ export default function SidebarLayout() {
       {/* Main content */}
       <main style={{ flex: 1, padding: "2rem", backgroundColor: "#fafafa" }}>
         <h1 style={{ fontSize: "1.5rem" }}>
-          {activeTab === "home" && "Welcome to Home"}
+          {activeTab === "hjem" && <AboutHenrik /> }
           {activeTab === "profile" && "Your Profile"}
           {activeTab === "messages" && "Your Messages"}
           {activeTab === "settings" && "Settings"}
