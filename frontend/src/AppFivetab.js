@@ -1,6 +1,6 @@
 // SidebarLayout.js
 import React, { useState } from "react";
-import AboutHenrik from "../pages/aboutpage/AboutHenrik";
+import AboutHenrik from "./src/pages/aboutpage/AboutHenrik";
 const tabs = [
   { id: "hjem", label: "Hjem" },
   { id: "profile", label: "Profile" },
