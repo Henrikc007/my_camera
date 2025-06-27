@@ -1,66 +1,51 @@
+// SidebarLayout.js
 import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import {
-  Home as HomeIcon,
-  User as UserIcon,
-  MessageSquare as MessageIcon,
-  Settings as SettingsIcon,
-  HelpCircle as HelpIcon,
-} from "lucide-react";
 
 const tabs = [
-  { id: "home", label: "Home", icon: <HomeIcon size={20} /> },
-  { id: "profile", label: "Profile", icon: <UserIcon size={20} /> },
-  { id: "messages", label: "Messages", icon: <MessageIcon size={20} /> },
-  { id: "settings", label: "Settings", icon: <SettingsIcon size={20} /> },
-  { id: "help", label: "Help", icon: <HelpIcon size={20} /> },
+  { id: "home", label: "Home" },
+  { id: "profile", label: "Profile" },
+  { id: "messages", label: "Messages" },
+  { id: "settings", label: "Settings" },
+  { id: "help", label: "Help" },
 ];
 
 export default function SidebarLayout() {
-  const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const [activeTab, setActiveTab] = useState("home");
 
   return (
-    <div className="flex h-screen">
+    <div style={{ display: "flex", height: "100vh", fontFamily: "sans-serif" }}>
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r shadow-lg">
-        <nav className="flex flex-col p-4 space-y-2">
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className="relative"
+      <aside style={{ width: "200px", backgroundColor: "#f3f4f6", padding: "1rem", borderRight: "1px solid #ddd" }}>
+        {tabs.map((tab) => (
+          <div key={tab.id}>
+            <button
               onClick={() => setActiveTab(tab.id)}
+              style={{
+                width: "100%",
+                padding: "0.5rem 1rem",
+                margin: "0.2rem 0",
+                textAlign: "left",
+                backgroundColor: activeTab === tab.id ? "#e5e7eb" : "transparent",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: activeTab === tab.id ? "bold" : "normal",
+              }}
             >
-              {activeTab === tab.id && (
-                <motion.div
-                  layoutId="sidebar-highlight"
-                  className="absolute inset-y-0 left-0 w-1 bg-blue-500 rounded-tr-lg rounded-br-lg"
-                />
-              )}
-              <button
-                className={`flex items-center w-full space-x-3 p-2 rounded-lg transition-colors hover:bg-gray-100  \$
-                  {activeTab === tab.id ? "bg-gray-100 font-medium" : "text-gray-600"}
-                `}
-              >
-                {tab.icon}
-                <span>{tab.label}</span>
-              </button>
-            </div>
-          ))}
-        </nav>
+              {tab.label}
+            </button>
+          </div>
+        ))}
       </aside>
 
-      {/* Main Content */}
-      <main className="flex-1 p-6 bg-gray-50">
-        <Card className="rounded-2xl shadow-md p-6">
-          <CardContent>
-            {activeTab === "home" && <h1 className="text-xl">Welcome to Home</h1>}
-            {activeTab === "profile" && <h1 className="text-xl">Your Profile</h1>}
-            {activeTab === "messages" && <h1 className="text-xl">Your Messages</h1>}
-            {activeTab === "settings" && <h1 className="text-xl">Settings</h1>}
-            {activeTab === "help" && <h1 className="text-xl">Help & Support</h1>}
-          </CardContent>
-        </Card>
+      {/* Main content */}
+      <main style={{ flex: 1, padding: "2rem", backgroundColor: "#fafafa" }}>
+        <h1 style={{ fontSize: "1.5rem" }}>
+          {activeTab === "home" && "Welcome to Home"}
+          {activeTab === "profile" && "Your Profile"}
+          {activeTab === "messages" && "Your Messages"}
+          {activeTab === "settings" && "Settings"}
+          {activeTab === "help" && "Help & Support"}
+        </h1>
       </main>
     </div>
   );
