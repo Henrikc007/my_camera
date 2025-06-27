@@ -1,8 +1,9 @@
 // SidebarLayout.js
 import React, { useState } from "react";
 import AboutHenrik from "./pages/aboutpage/AboutHenrik";
-import Cloverimageapp from "./pages/cloverapp/Cloverimageapp"
+import Cloverimageapp from "./pages/cloverapp/Cloverimageapp";
 import AboutNeuralNet from "./pages/neuralnetworkpage/neuralnet";
+import Myprofile from "./pages/settingspage/mysettings";
 const tabs = [
   { id: "hjem", label: "Hjem" },
   { id: "neuralnet", label: "Neurale Netværk" },
@@ -45,8 +46,10 @@ export default function SidebarLayout() {
           {activeTab === "hjem" && <AboutHenrik /> }
           {activeTab === "neuralnet" && <AboutNeuralNet/>}
           {activeTab === "cloverapp" && <Cloverimageapp/>}
-          {activeTab === "settings" && "Settings"}
-          {activeTab === "help" && "Help & Support"}
+          {activeTab === "settings" && <Myprofile
+                                        name={"Henrik"}    
+                                        />}
+          {activeTab === "donate" && "Donation"}
         </h1>
       </main>
     </div>
