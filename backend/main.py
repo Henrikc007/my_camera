@@ -20,4 +20,4 @@ async def upload_image(file: UploadFile = File(...)):
     file_location = f"images/{file.filename}"
     with open(file_location, "wb") as f:
         shutil.copyfileobj(file.file, f)
-    return {"status": "success", "filename": file.filename}99
+    return {"status": "success", "filename": file.filename}

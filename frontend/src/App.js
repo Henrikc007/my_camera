@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-
+function Mytabs({ emner }){
+    return <h2> emner </h2>;
+  }
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -29,8 +31,10 @@ function App() {
       alert("Upload failed");
     }
   };
+  
 
   return (
+    
     <div style={{ padding: "20px" }}>
       <h1>Take a Photo</h1>
       <input
