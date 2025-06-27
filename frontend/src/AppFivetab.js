@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import AboutHenrik from "./pages/aboutpage/AboutHenrik";
 import Cloverimageapp from "./pages/cloverapp/Cloverimageapp"
+import AboutNeuralNet from "./pages/neuralnetworkpage/neuralnet";
 const tabs = [
   { id: "hjem", label: "Hjem" },
   { id: "neuralnet", label: "Neurale Netværk" },
@@ -42,7 +43,7 @@ export default function SidebarLayout() {
       <main style={{ flex: 1, padding: "2rem", backgroundColor: "#fafafa" }}>
         <h1 style={{ fontSize: "1.5rem" }}>
           {activeTab === "hjem" && <AboutHenrik /> }
-          {activeTab === "neuralnet" && "Your Profile"}
+          {activeTab === "neuralnet" && <AboutNeuralNet/>}
           {activeTab === "cloverapp" && <Cloverimageapp/>}
           {activeTab === "settings" && "Settings"}
           {activeTab === "help" && "Help & Support"}
