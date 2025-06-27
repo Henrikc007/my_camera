@@ -1,10 +1,11 @@
 // SidebarLayout.js
 import React, { useState } from "react";
 import AboutHenrik from "./pages/aboutpage/AboutHenrik";
+import Cloverimageapp from "./pages/cloverapp/Cloverimageapp"
 const tabs = [
   { id: "hjem", label: "Hjem" },
-  { id: "profile", label: "Profile" },
-  { id: "messages", label: "Messages" },
+  { id: "neuralnet", label: "Neurale Netværk" },
+  { id: "cloverapp", label: "Kløver app" },
   { id: "settings", label: "Settings" },
   { id: "help", label: "Help" },
 ];
@@ -41,8 +42,8 @@ export default function SidebarLayout() {
       <main style={{ flex: 1, padding: "2rem", backgroundColor: "#fafafa" }}>
         <h1 style={{ fontSize: "1.5rem" }}>
           {activeTab === "hjem" && <AboutHenrik /> }
-          {activeTab === "profile" && "Your Profile"}
-          {activeTab === "messages" && "Your Messages"}
+          {activeTab === "neuralnet" && "Your Profile"}
+          {activeTab === "cloverapp" && <Cloverimageapp/>}
           {activeTab === "settings" && "Settings"}
           {activeTab === "help" && "Help & Support"}
         </h1>
