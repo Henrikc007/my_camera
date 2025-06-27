@@ -4,12 +4,14 @@ import AboutHenrik from "./pages/aboutpage/AboutHenrik";
 import Cloverimageapp from "./pages/cloverapp/Cloverimageapp";
 import AboutNeuralNet from "./pages/neuralnetworkpage/neuralnet";
 import Myprofile from "./pages/settingspage/mysettings";
+import Helpisapreciated from "./pages/donatepage/helpapreciated";
+
 const tabs = [
   { id: "hjem", label: "Hjem" },
   { id: "neuralnet", label: "Neurale Netværk" },
   { id: "cloverapp", label: "Kløver app" },
   { id: "settings", label: "Settings" },
-  { id: "help", label: "Help" },
+  { id: "donate", label: "Donation" },
 ];
 
 export default function SidebarLayout() {
@@ -49,7 +51,7 @@ export default function SidebarLayout() {
           {activeTab === "settings" && <Myprofile
                                         name={"Henrik"}    
                                         />}
-          {activeTab === "donate" && "Donation"}
+          {activeTab === "donate" && <Helpisapreciated/>}
         </h1>
       </main>
     </div>
